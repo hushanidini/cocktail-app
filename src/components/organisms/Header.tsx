@@ -23,8 +23,8 @@ export default function Header() {
   };
 
   return (
-    <header className='sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6 bg-gray-900 text-white'>
-      <nav className='hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6'>
+    <header className='sticky top-0 flex items-center h-16 gap-4 px-4 text-white bg-gray-900 border-b bg-background md:px-6'>
+      <nav className='flex-col hidden gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6'>
         <Link to='/' className='flex items-center gap-2 text-lg font-semibold md:text-base'>
           <CupSoda className='w-10 h-10' />
         </Link>
@@ -34,7 +34,7 @@ export default function Header() {
             key={item.id}
             to={item.url}
             onClick={handleClick}
-            className='text-foreground transition-colors hover:text-foreground'
+            className='text-lg transition-colors text-foreground hover:text-foreground'
           >
             {item.title}
           </Link>
@@ -43,7 +43,7 @@ export default function Header() {
       <Sheet>
         <SheetTrigger asChild>
           <Button variant='outline' size='icon' className='shrink-0 md:hidden'>
-            <Menu className='h-5 w-5' />
+            <Menu className='w-5 h-5' />
             <span className='sr-only'>Toggle navigation menu</span>
           </Button>
         </SheetTrigger>
@@ -68,16 +68,16 @@ export default function Header() {
           </nav>
         </SheetContent>
       </Sheet>
-      <div className='flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4'>
-        <form className='ml-auto flex-1 sm:flex-initial'></form>
+      <div className='flex items-center w-full gap-4 md:ml-auto md:gap-2 lg:gap-4'>
+        <form className='flex-1 ml-auto sm:flex-initial'></form>
 
         <Link to={ROUTES.FAVORITE_PAGE}>
-          <Button variant='secondary' size='icon' className='rounded-full'>
+          <Button variant='secondary' size='icon' className='text-lg rounded-full'>
             <LabelWithIcon
               Icon={Heart}
               label={String(favorites?.length)}
               bgColorClass={'w-7 h-7'}
-              textColorClass={`font-bold text-white`}
+              textColorClass={`font-bold text-white text-lg`}
             />
           </Button>
         </Link>
