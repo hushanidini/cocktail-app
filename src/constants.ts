@@ -17,11 +17,5 @@ export const NAVIGATION_ITEMS = [
     title: 'Favorites',
     url: '/favorites',
     onlyMobile: false
-  },
-  {
-    id: '2',
-    title: 'Search',
-    url: '/search',
-    onlyMobile: false
   }
 ] as const;
