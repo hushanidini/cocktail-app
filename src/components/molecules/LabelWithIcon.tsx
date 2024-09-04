@@ -14,7 +14,7 @@ export default function LabelWithIcon({
 }: LabelWithIconPropsProps) {
   return (
     <div className='flex items-center gap-2'>
-      <Icon className={` flex-shrink-0 ${bgColorClass}`} />
+      <Icon className={`flex-shrink-0 ${bgColorClass}`} />
       <p className={`text-md ${textColorClass}`}>{label}</p>
     </div>
   );

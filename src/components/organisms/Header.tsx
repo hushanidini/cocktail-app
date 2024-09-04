@@ -76,8 +76,8 @@ export default function Header() {
             <LabelWithIcon
               Icon={Heart}
               label={String(favorites?.length)}
-              bgColorClass={'w-7 h-7'}
-              textColorClass={`font-bold text-white text-lg`}
+              bgColorClass={`w-7 h-7`}
+              textColorClass={`font-bold text-lg ${favorites?.length > 0 ? 'text-red-500' : 'text-white'}`}
             />
           </Button>
         </Link>
