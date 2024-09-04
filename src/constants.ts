@@ -11,11 +11,5 @@ export const NAVIGATION_ITEMS = [
     title: 'Home',
     url: '/',
     onlyMobile: false
-  },
-  {
-    id: '1',
-    title: 'Favorites',
-    url: '/favorites',
-    onlyMobile: false
   }
 ] as const;
