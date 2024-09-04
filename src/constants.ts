@@ -3,6 +3,8 @@ export const ROUTES = {
   FAVORITE_PAGE: '/favorites'
 };
 
+export const FAVORITES_LS = 'favorites';
+
 export const NAVIGATION_ITEMS = [
   {
     id: '0',

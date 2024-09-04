@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { Cocktail } from '@/types/types';
+import { FAVORITES_LS } from '@/constants';
 
 interface FavoritesContextType {
   favorites: Cocktail[];
@@ -18,7 +19,20 @@ export const useFavorites = () => {
 };
 
 export const FavoritesProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [favorites, setFavorites] = useState<Cocktail[]>([]);
+  const [favorites, setFavorites] = useState<Cocktail[]>(() => {
+    try {
+      // initial
+      const storedFavorites = localStorage.getItem(FAVORITES_LS);
+      return storedFavorites ? JSON.parse(storedFavorites) : [];
+    } catch (error) {
+      console.error('Failed to load favorites from localStorage:', error);
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem(FAVORITES_LS, JSON.stringify(favorites));
+  }, [favorites]);
 
   const addToFavorites = (cocktail: Cocktail) => {
     if (!favorites.some((fav) => fav.idDrink === cocktail.idDrink)) {
