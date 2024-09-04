@@ -23,7 +23,7 @@ export default function Header() {
   };
 
   return (
-    <header className='sticky top-0 flex items-center h-16 gap-4 px-4 text-white bg-gray-900 border-b bg-background md:px-6'>
+    <header className='sticky top-0 flex items-center h-20 gap-4 px-4 text-white bg-black border-b bg-background md:px-6'>
       <nav className='flex-col hidden gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6'>
         <Link to='/' className='flex items-center gap-2 text-lg font-semibold md:text-base'>
           <CupSoda className='w-10 h-10' />
