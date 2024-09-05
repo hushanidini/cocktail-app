@@ -14,16 +14,11 @@ export default function FavoritesPage() {
   const { favorites, removeFromFavorites } = useFavorites();
   return (
     <>
-      <section className='space-y-4 mb-10 pb-10 border-b border-b-slate-300'>
+      <section className='pb-10 mb-10 space-y-4 border-b border-b-slate-300'>
         <SubHeading label='Favorites' />
       </section>
 
       {/* Favorites cocktails */}
-      <div className='flex items-center gap-4 pb-4'>
-        <h1 className='flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0'>
-          Favorite Cocktails
-        </h1>
-      </div>
 
       {favorites.length > 0 ? (
         <div className='grid gap-4 md:grid-cols-3 lg:grid-cols-5'>
@@ -36,8 +31,8 @@ export default function FavoritesPage() {
               <CardContent>
                 <img src={strDrinkThumb} alt={strDrink} className='w-full h-auto rounded-md' />
               </CardContent>
-              <CardFooter>
-                <Button onClick={() => removeFromFavorites(idDrink)} size='sm' variant='outline'>
+              <CardFooter className='flex justify-center'>
+                <Button onClick={() => removeFromFavorites(idDrink)} size='default' variant='outline' className='text-red-500'>
                   Remove
                 </Button>
               </CardFooter>
@@ -45,7 +40,7 @@ export default function FavoritesPage() {
           ))}
         </div>
       ) : (
-        <p>No favorite cocktails found.</p>
+        <p className='flex justify-center'>No favorite cocktails found.</p>
       )}
     </>
   );

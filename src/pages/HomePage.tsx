@@ -9,7 +9,6 @@ import {
 } from '@/components/ui/card';
 import { Button, Input } from '@/components/ui';
 import { Cocktail } from '@/types/types';
-import { Search } from 'lucide-react';
 import { useFavorites } from '@/FavoritesContext';
 
 export default function HomePage() {
@@ -53,7 +52,6 @@ export default function HomePage() {
       {/* search cocktails */}
       <div className='flex items-center gap-4 pb-4'>
         <div className='items-center hidden gap-2 md:ml-auto md:flex'>
-          <Search className='absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground' />
           <Input
             type='search'
             placeholder='Search products...'
@@ -61,7 +59,7 @@ export default function HomePage() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-          <Button onClick={searchCocktails} size='sm' variant='outline'>
+          <Button onClick={searchCocktails} size='default' variant='outline'>
             Search
           </Button>
         </div>
@@ -73,7 +71,7 @@ export default function HomePage() {
         </h1>
 
         <div className='items-center hidden gap-2 md:ml-auto md:flex'>
-          <Button onClick={() => fetchRandomCocktails()} size='sm' variant='outline'>
+          <Button onClick={() => fetchRandomCocktails()} size='default' variant='outline'>
             Refresh
           </Button>
         </div>
@@ -121,9 +119,9 @@ export default function HomePage() {
                   className='w-full h-auto rounded-md'
                 />
               </CardContent>
-              <CardFooter>
+              <CardFooter className='flex justify-center'>
                 {isFavorite ? null : (
-                  <Button onClick={() => addToFavorites(cocktail)} size='sm' variant='outline'>
+                  <Button onClick={() => addToFavorites(cocktail)} size='default' variant='outline'>
                     Add to Favorites
                   </Button>
                 )}
